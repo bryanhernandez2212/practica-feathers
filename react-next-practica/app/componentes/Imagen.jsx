@@ -1,21 +1,20 @@
 "use client";
 
 import { useState } from 'react';
+import { Button } from "reactstrap";
 
-export function Imagen() {
-    const [src, setSrc] = useState('/images/React.png');
+export function Imagen({color, imagen1, imagen2}) {
+    const [src, setSrc] = useState(imagen1);
 
     const cambiarImagen = () => {
-        setSrc(src === '/images/React.png' ? '/images/next.png' : '/images/React.png');
+        setSrc(src === imagen1 ? imagen2 : imagen1);
     };
 
   return (
     <div>
         <img src={src} style={{ margin : '0 auto', display: 'block', height: '200px', width: '200px' }}></img>
         <br />
-        <button onClick={cambiarImagen}
-        style={{fontSize: '16px', display: 'block', margin: '0 auto'}}
-        >Cambiar imagen</button>
+        <Button onClick={cambiarImagen} color={color} style={{ display: 'block', margin: '0 auto' }}>Cambiar imagen</Button>
     </div>
   );
 }
