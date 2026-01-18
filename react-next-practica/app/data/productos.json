@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "nombre": "Iphone 17 Pro",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/iphone771_FZ.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Iphone 16",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/iphone686_FZ.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Iphone 13",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/iphone474_FZ.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Iphone 17 Pro Max",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/iphone781_FZ.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Iphone 16 Pro Max",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://www.macstoreonline.com.mx/img/cx/media/all-products/iPhone/iPhone_16_Pro_Max.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Airpods Pro",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://www.macstoreonline.com.mx/img/sku/ACCAPP759_Z1.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Macbook Pro 2024",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://www.macstoreonline.com.mx/img/cx/media/all-products/mac/MacBook_Pro_M3_16.png"
+  },
+  {
+    "id": 8,
+    "nombre": "Macbook Air 2024",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://www.apple.com/newsroom/images/product/mac/standard/MacBook-Air-Keyboard-10302018_inline.jpg.large.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Apple Watch Series 10",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/watch457_FZ.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Apple Watch SE",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/watch491_FZ.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Apple Watch Ultra",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/watch472_FZ.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Airtag",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-double-select-202104_FMT_WHH?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=aUZiM0Z1TmxieDdSR0Z6RU5uemRuOHVJWlMva2FYSFVWb3Q4TXJyVGJVY2VnSEp2SE4xaUJuS0VhaWlSWW9obFBJSEI4eEprQ3k5NVh3Y3BXYkFrUFNsZGR5cUwzMzFEcGtUWTFWWHlHNDhsZjhjS2U1N1RFQ3VYKzBrK3l5TkI"
+  },
+  {
+    "id": 13,
+    "nombre": "Funda Iphone 17 Pro",
+    "categoria": "Accesorios",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/funapp1061_FZ.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Funda Iphone 16",
+    "categoria": "Accesorios",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/funapp997_FZ.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Funda Iphone 13",
+    "categoria": "Accesorios",
+    "icono": "apple",
+    "imagen": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MM2X3_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=YndJMGZPS0VPQjVDc3BBOEZkUzNubFZya2lKWlJmUEwrYndWOTJiVWJWQUYwVmtIbGRkS25RMVpBRlo0bk5DUVdXOGwrRHZNcUlTN0wrSC9WYVlwL2c"
+  },
+  {
+    "id": 16,
+    "nombre": "Correa Apple Watch SE",
+    "categoria": "Accesorios",
+    "icono": "apple",
+    "imagen": "https://ss628.liverpool.com.mx/xl/1104966094.jpg"
+  },
+  {
+    "id": 17,
+    "nombre": "Correa Apple Watch Ultra",
+    "categoria": "Accesorios",
+    "icono": "apple",
+    "imagen": "https://www.macstoreonline.com.mx/img/sku/EXTNOM011_Z1.jpg"
+  },
+  {
+    "id": 18,
+    "nombre": "Correa Aluminio Apple Watch Ultra",
+    "categoria": "Accesorios",
+    "icono": "apple",
+    "imagen": "https://ultrasupply.mx/cdn/shop/files/SS_New_Render.jpg?v=1762528220"
+  },
+  {
+    "id": 19,
+    "nombre": "Mac mini 2024",
+    "categoria": "Tecnología",
+    "icono": "apple",
+    "imagen": "https://www.macstoreonline.com.mx/img/sku/cpuapp362_Z1.webp"
+  },
+  {
+    "id": 20,
+    "nombre": "Funda Airpods Pro",
+    "categoria": "Accesorios",
+    "icono": "apple",
+    "imagen": "https://macstoreonline.com.mx/img/sku/funnom031_FZ.jpg"
+  }
+]

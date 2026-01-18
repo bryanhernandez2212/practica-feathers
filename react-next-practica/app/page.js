@@ -6,7 +6,8 @@ import { Contador } from './componentes/Contador';
 import { Sitio } from './componentes/Sitio';
 import { Toast } from './componentes/Toast';
 import Example from './componentes/Modal';
-import Carousel  from './componentes/Carrusel';
+import {Tabla}  from './componentes/Tabla';
+// import Carousel  from './componentes/Carrusel';
 
 export default function Home() {
   return (
@@ -17,15 +18,17 @@ export default function Home() {
 
       <Imagen color="primary" imagen1="/images/React.png" imagen2="/images/next.png"></Imagen>
 
-      <Contador />  
+      <Contador posicion="center" color="blue"/>  
 
       <Sitio colorSitio="warning" primerColor="lightblue" segundoColor="white" />
  
-      <Toast color="danger" texto="sisisi" colorBoton="danger" textoBoton="Click"/>
+      <Toast color="danger" texto="sisisi" colorBoton="danger" textoBoton="Click" posicion="center"/>
 
       <Example />
 
-      <Carousel />
+      {/* <Carousel /> */}
+
+      <Tabla />
    
     </main>
   );

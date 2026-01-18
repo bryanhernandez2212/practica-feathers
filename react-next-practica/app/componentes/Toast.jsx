@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import { Alert } from "reactstrap";
 import { useState } from "react";
 
-export function Toast({ texto, color, colorBoton, textoBoton }) {
+export function Toast({ texto, color, colorBoton, textoBoton , posicion}) {
   const [visible, setVisible] = useState(false);
 
   const onDismiss = () => setVisible(true);
@@ -14,11 +14,11 @@ export function Toast({ texto, color, colorBoton, textoBoton }) {
   }, 3000);
 
   return (
-    <div>
+    <div style={{ textAlign: posicion }}>
       <Alert color={color} isOpen={visible} toggle={onDismiss}>
         {texto}
       </Alert>
-      <Button style={{ display: 'block', margin: '0 auto' }} color={colorBoton} onClick={onDismiss}>
+      <Button color={colorBoton} onClick={onDismiss}>
        { textoBoton }
       </Button>
     </div>
