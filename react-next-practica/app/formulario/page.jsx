@@ -41,26 +41,55 @@ export function Formulario() {
   };
 
   const validarFormulario = () => {
-    const nuevosErrores = {
-      nombre: !formulario.nombre.trim(),
-      apellido: !formulario.apellido.trim(),
-      email: !formulario.email.includes("@"),
-      password: formulario.password.length < 6,
-      edad: !formulario.edad || formulario.edad <= 0,
-      genero: !formulario.genero,
-      rol: !formulario.rol,
-      opciones: !formulario.opciones,
-    };
+    const nuevosErrores = {};
+    const hoy = new Date().toISOString().split("T")[0];
+
+    // Solo letras para el nombre
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(formulario.nombre)) {
+      nuevosErrores.nombre = "Solo se permiten letras";
+    }
+
+    // Letras para el apellido
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(formulario.apellido)) {
+      nuevosErrores.apellido = "Solo se permiten letras";
+    }
+
+    // Email válido
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formulario.email)) {
+      nuevosErrores.email = "Correo electrónico inválido";
+    }
+
+    // Números positivos
+    if (
+      !/^\d+$/.test(formulario.edad) ||
+      formulario.edad <= 0 ||
+      formulario.edad > 100
+    ) {
+      nuevosErrores.edad = "Solo números positivos hasta 100";
+    }
+
+    // Fecha actial
+    if (formulario.fecha < hoy) {
+      nuevosErrores.fecha = "La fecha no puede ser menor al día de hoy";
+    }
 
     setErrores(nuevosErrores);
+    return Object.keys(nuevosErrores).length === 0;
+  };
 
-    return !Object.values(nuevosErrores).includes(true);
+  const styleForm = {
+    maxWidth: "800px",
+    margin: "40px auto",
+    padding: "25px",
+    border: "1px solid #ddd",
+    borderRadius: "10px",
+    backgroundColor: "#f9f9f9",
   };
 
   return (
     <>
-      <h1>Formulario de Registro</h1>
-      <Form>
+      <Form style={styleForm}>
+        <h1>Formulario de Registro</h1>
         {/* Nombre */}
         <FormGroup>
           <Label>Nombre</Label>
@@ -69,35 +98,38 @@ export function Formulario() {
             name="nombre"
             value={formulario.nombre}
             onChange={handleChange}
-            invalid={errores.nombre}
+            valid={formulario.nombre && !errores.nombre}
+            invalid={!!errores.nombre}
           />
-          <FormFeedback>El nombre es obligatorio</FormFeedback>
+          <FormFeedback>{errores.nombre}</FormFeedback>
         </FormGroup>
 
         {/* Apellido */}
         <FormGroup>
-          <Label for="exampleEmail">Apellido</Label>
+          <Label>Apellido</Label>
           <Input
             type="text"
             name="apellido"
             value={formulario.apellido}
             onChange={handleChange}
-            invalid={errores.apellido}
+            valid={formulario.apellido && !errores.apellido}
+            invalid={!!errores.apellido}
           />
-          <FormFeedback>El apellido es obligatorio</FormFeedback>
+          <FormFeedback>{errores.apellido}</FormFeedback>
         </FormGroup>
 
         {/* Correo */}
         <FormGroup>
-          <Label for="exampleEmail">Correo</Label>
+          <Label>Email</Label>
           <Input
             type="email"
             name="email"
             value={formulario.email}
             onChange={handleChange}
-            invalid={errores.email}
+            valid={formulario.email && !errores.email}
+            invalid={!!errores.email}
           />
-          <FormFeedback>El correo no es válido</FormFeedback>
+          <FormFeedback>{errores.email}</FormFeedback>
         </FormGroup>
 
         {/* Contraseña */}
@@ -108,9 +140,7 @@ export function Formulario() {
             name="password"
             value={formulario.password}
             onChange={handleChange}
-            invalid={errores.password}
           />
-          <FormFeedback>La contraseña está muy corta</FormFeedback>
         </FormGroup>
 
         {/* Edad */}
@@ -121,7 +151,10 @@ export function Formulario() {
             name="edad"
             value={formulario.edad}
             onChange={handleChange}
+            valid={formulario.edad && !errores.edad}
+            invalid={!!errores.edad}
           />
+          <FormFeedback>{errores.edad}</FormFeedback>
         </FormGroup>
 
         {/* Género */}
@@ -195,12 +228,15 @@ export function Formulario() {
             type="date"
             name="fecha"
             value={formulario.fecha}
+            min={new Date().toISOString().split("T")[0]}
             onChange={handleChange}
+            valid={formulario.fecha && !errores.fecha}
+            invalid={!!errores.fecha}
           />
+          <FormFeedback>{errores.fecha}</FormFeedback>
         </FormGroup>
 
         <Button
-          type="button"
           color="primary"
           onClick={() => {
             if (validarFormulario()) {
