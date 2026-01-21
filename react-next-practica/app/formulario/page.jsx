@@ -11,6 +11,7 @@ import {
   ModalBody,
   Button,
   FormFeedback,
+  Table
 } from "reactstrap";
 
 export function Formulario() {
@@ -30,6 +31,7 @@ export function Formulario() {
   const [formulario, setFormulario] = useState(initialForm);
   const [modal, setModal] = useState(false);
   const [errores, setErrores] = useState({});
+  const [registros, setRegistros] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -77,11 +79,30 @@ export function Formulario() {
     return Object.keys(nuevosErrores).length === 0;
   };
 
+  const guardarRegistro = () => {
+  if (validarFormulario()) {
+    setRegistros([...registros, formulario]);
+    setFormulario(initialForm);
+  }
+};
+
+const eliminarRegistro = (index) => {
+    const nuevosRegistros = registros.filter((_, i) => i !== index);
+    setRegistros(nuevosRegistros);
+  }
+
+  const editarRegistro = (index) => {
+    const registroAEditar = registros[index];
+    setFormulario(registroAEditar);
+    const nuevosRegistros = registros.filter((_, i) => i !== index);
+    setRegistros(nuevosRegistros);
+  }
+
+
   const styleForm = {
     maxWidth: "800px",
     margin: "40px auto",
     padding: "25px",
-    border: "1px solid #ddd",
     borderRadius: "10px",
     backgroundColor: "#f9f9f9",
   };
@@ -236,6 +257,10 @@ export function Formulario() {
           <FormFeedback>{errores.fecha}</FormFeedback>
         </FormGroup>
 
+        <Button color="primary" onClick={guardarRegistro}>
+          Guardar
+        </Button>
+
         <Button
           color="primary"
           onClick={() => {
@@ -272,6 +297,36 @@ export function Formulario() {
           <p>Notas: {formulario.notas}</p>
         </ModalBody>
       </Modal>
+
+      <Table striped>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {registros.map((item, index) => (
+            <tr key={item.id}>
+              <th>{index + 1}</th>
+              <td>{item.nombre}</td>
+              <td>{item.apellido}</td>
+              <td>{item.email}</td>
+              <td>
+                <Button color="danger" onClick={() => eliminarRegistro(index)}>
+                  Eliminar
+                </Button>
+                <Button color="warning" onClick={() => editarRegistro(index)}>
+                  Editar
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </>
   );
 }
