@@ -119,8 +119,8 @@ const eliminarRegistro = (index) => {
             name="nombre"
             value={formulario.nombre}
             onChange={handleChange}
-            valid={formulario.nombre && !errores.nombre}
-            invalid={!!errores.nombre}
+            valid={errores.nombre ? false : true}
+            invalid={errores.nombre ? true : false}
           />
           <FormFeedback>{errores.nombre}</FormFeedback>
         </FormGroup>
@@ -133,8 +133,8 @@ const eliminarRegistro = (index) => {
             name="apellido"
             value={formulario.apellido}
             onChange={handleChange}
-            valid={formulario.apellido && !errores.apellido}
-            invalid={!!errores.apellido}
+            valid={errores.apellido ? false : true}
+            invalid={errores.apellido ? true : false}
           />
           <FormFeedback>{errores.apellido}</FormFeedback>
         </FormGroup>
@@ -147,8 +147,8 @@ const eliminarRegistro = (index) => {
             name="email"
             value={formulario.email}
             onChange={handleChange}
-            valid={formulario.email && !errores.email}
-            invalid={!!errores.email}
+            valid={errores.email ? false : true}
+            invalid={errores.email ? true : false}
           />
           <FormFeedback>{errores.email}</FormFeedback>
         </FormGroup>
@@ -172,8 +172,8 @@ const eliminarRegistro = (index) => {
             name="edad"
             value={formulario.edad}
             onChange={handleChange}
-            valid={formulario.edad && !errores.edad}
-            invalid={!!errores.edad}
+            valid={errores.edad ? false : true}
+            invalid={errores.edad ? true : false}
           />
           <FormFeedback>{errores.edad}</FormFeedback>
         </FormGroup>
@@ -251,8 +251,8 @@ const eliminarRegistro = (index) => {
             value={formulario.fecha}
             min={new Date().toISOString().split("T")[0]}
             onChange={handleChange}
-            valid={formulario.fecha && !errores.fecha}
-            invalid={!!errores.fecha}
+            valid={errores.fecha ? false : true}
+            invalid={errores.fecha ? true : false}
           />
           <FormFeedback>{errores.fecha}</FormFeedback>
         </FormGroup>

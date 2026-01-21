@@ -8,6 +8,7 @@ import { Toast } from './componentes/Toast';
 import Example from './componentes/Modal';
 import {Tabla}  from './componentes/Tabla';
 import { Formulario } from './formulario/page';
+import { Usuarios } from './componentes/Usuarios';
 // import Carousel  from './componentes/Carrusel';
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
       <Tabla />
    
       <Formulario />
+      <Usuarios />
     </main>
   );
   }
