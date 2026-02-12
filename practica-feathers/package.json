@@ -58,6 +58,7 @@
     "@feathersjs/typebox": "^5.0.40",
     "compression": "^1.8.1",
     "mongodb": "^6.21.0",
+    "uuid": "^13.0.0",
     "winston": "^3.19.0"
   },
   "devDependencies": {

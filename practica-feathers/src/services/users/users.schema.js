@@ -3,11 +3,14 @@ import { resolve } from '@feathersjs/schema'
 import { Type, getValidator, querySyntax } from '@feathersjs/typebox'
 import { ObjectIdSchema } from '@feathersjs/typebox'
 import { dataValidator, queryValidator } from '../../validators.js'
+import { v4 as uuidv4 } from 'uuid'
+
 
 // Main data model schema
 export const usersSchema = Type.Object(
   {
     _id: ObjectIdSchema(),
+    id: Type.String(),
     password : Type.String(),
     first_name : Type.String(),
     last_name : Type.String(),
@@ -27,7 +30,7 @@ export const usersDataSchema = Type.Pick(usersSchema, ['password', 'first_name',
   $id: 'UsersData'
 })
 export const usersDataValidator = getValidator(usersDataSchema, dataValidator)
-export const usersDataResolver = resolve({})
+export const usersDataResolver = resolve({ id: async () => uuidv4()})
 
 // Schema for updating existing entries
 export const usersPatchSchema = Type.Partial(usersSchema, {
@@ -37,7 +40,7 @@ export const usersPatchValidator = getValidator(usersPatchSchema, dataValidator)
 export const usersPatchResolver = resolve({})
 
 // Schema for allowed query properties
-export const usersQueryProperties = Type.Pick(usersSchema, ['_id', 'first_name', 'last_name', 'username', 'email', 'gender'])
+export const usersQueryProperties = Type.Pick(usersSchema, ['_id', 'id', 'first_name', 'last_name', 'username', 'email', 'gender'])
 export const usersQuerySchema = Type.Intersect(
   [
     querySyntax(usersQueryProperties),
